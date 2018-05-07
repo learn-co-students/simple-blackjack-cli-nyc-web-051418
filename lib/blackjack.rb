@@ -27,7 +27,7 @@ def initial_round
   sum1 = deal_card
   sum2 = deal_card
   total = sum1 + sum2
-  display_card_total(sum3)
+  display_card_total(total)
   return total
 end
 
@@ -48,7 +48,6 @@ end
 
 def invalid_command
    puts "Please enter a valid command"
-   prompt_user
 end
 
 #####################################################
@@ -58,10 +57,9 @@ end
 def runner
   welcome
   initial_round
-  until total > 21
-   display_card_total(total)
-   hit?
+  until total > 20
+    hit?
+    display_card_total(total)
   end
-  end_game
+end_game
 end
-    
